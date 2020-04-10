@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
 
 * {
     border: 0;
@@ -8,6 +8,7 @@
 body {
     background: #282a36;
     font-family: 'Source Sans Pro', sans-serif;
+    color: white
 }
 header {
     padding: 32px;
@@ -18,10 +19,47 @@ header div {
     text-align: center;
 }
 header div a {
-    
+    color: white;
+    font-size: 18px;
+    line-height: 50px;
+    margin: 30px;
+    text-decoration: none;
 }
 
 header div a:hover {
     color: #50fa7b;
     transition: color 200ms;
+}
+
+#wrapper {
+    text-align: center;
+    padding: 32px;
+}
+
+#wrapper img {
+    border-radius: 50%;
+    border: 5px solid #50fa7b;
+    margin-bottom: 32px;
+    width: 250px;
+}
+
+#wrapper h1 {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: bold;
+}
+
+#wrapper h2 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: normal;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+#wrapper p {
+    max-width: 500px;
+    margin: 32px auto;
+    font-size: 15px;
+    line-height: 10px;
 }
