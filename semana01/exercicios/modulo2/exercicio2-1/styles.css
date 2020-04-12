@@ -28,3 +28,82 @@ header div a:hover{
     color: teal;
     transition: 200ms;
 }
+
+#about_wrapper {
+    text-align: center;
+    margin: auto;
+}
+
+#about_wrapper img {
+    text-align: center;
+    border-radius: 50%;
+    border: 5px solid white
+}
+
+#about_wrapper h1 {
+    color: thistle;
+    margin: 10px 0 40px 0;
+    font-size: 42px;
+}
+
+#about {
+    background: #393b47;
+    padding-bottom: 32px;    
+}
+
+#about h2{
+    color:rgb(118, 92, 167);
+    margin-bottom: 20px;
+    font-size: 27px;
+    text-align: center;
+}
+
+#about p {
+    color: whitesmoke;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 3px 15% 0 18%;
+}
+
+#list{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 32px;
+}
+
+#list h2 {
+    text-align: center;
+    color: thistle;
+    padding: 32px;
+    font-size: 27px;
+}
+
+#list p {
+    color: whitesmoke;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 3px 15% 20px 18%;
+}
+
+#list p img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+#links {
+    padding: 5px;
+    text-align: center;
+}
+
+#links a {
+    color: rgb(209, 181, 209);
+    font-size: 14px;
+    line-height: 50px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+#links a:hover{
+    color: teal;
+    transition: 200ms;
+}
