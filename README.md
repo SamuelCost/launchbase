@@ -32,9 +32,9 @@ Abaixo também há links para uma melhor navegação de todo o contéudo abordad
     - Exercício 2-1 - [Detalhes](https://github.com/Rocketseat/bootcamp-launchbase-desafios-02/blob/master/desafios/02-1-primeiro-html.md)
     
 ### [Módulo 01](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo1)
-- Introdução a Programação Web - [Detalhes](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo1)
+- Introdução a Programação Web
 ### [Módulo 02](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo2)
-- Iniciando com Front-End - [Detalhes](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo2)
+- Iniciando com Front-End
     
 ### Update
 A cada atualização este arquivo será atualizado junto com os demais links.
