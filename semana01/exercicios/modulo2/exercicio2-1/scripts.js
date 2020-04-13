@@ -17,7 +17,6 @@ document.querySelector(".close-modal").addEventListener("click", function(){
     modal.classList.remove("maximize")
 })
 
-
 maximize.addEventListener("click", function(){
     if (modal.classList.contains('maximize')){
         modal.classList.remove("maximize")
