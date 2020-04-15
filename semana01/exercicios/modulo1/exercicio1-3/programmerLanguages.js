@@ -16,8 +16,6 @@ for (let i = 0; i < user.length; i++) {
 }
 
 function checksIfUserUsesCss(user) {
-    const ver = 0
-
     for (let j = 0; j < user.technologys.length; j++) {
         if (user.technologys[j] === "CSS") {
             return true;

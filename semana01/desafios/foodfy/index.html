@@ -7,101 +7,119 @@
     </head>
 
     <body>
-        <header>
-            <a href="index.html"><img src="_img/logo.png" alt="Logo Foodfy"></a>
-            <a href="/">Sobre</a>
-            <a href="/">Receitas</a>
-        </header>
-
-        <div id="billboard">
-            <div class="content_billboard">
-                <h1>As melhores receitas</h1>
-                <p>Aprendas a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro</p>
+        <div class="main">
+            <header>
+                <a href="index.html"><img src="_img/logo.png" alt="Logo Foodfy"></a>
+                <a href="about.html">Sobre</a>
+                <a href="recipes.html">Receitas</a>
+            </header>
+    
+            <div id="billboard">
+                <div class="content_billboard">
+                    <h1>As melhores receitas</h1>
+                    <p>Aprendas a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro</p>
+                </div>
+                <div class="img_billboard">
+                    <img src="_img/chef.png" alt="Mascote Chef">
+                </div>
             </div>
-            <div class="img_billboard">
-                <img src="_img/chef.png" alt="Mascote Chef">
-            </div>
+    
+            <h2>Mais acessadas</h2>
+    
+            <section class="recipes">
+                <div class="recipe" id="burger">
+                    <div class="recipe_img">
+                        <img src="_img/burger.png" alt="Imagem do Triplo Bacon Burguer">
+                    </div>
+                    <div class="recipe_content">
+                        <p>Triplo Bancon Burguer</p>
+                    </div>
+                    <div class="chef_recipe">
+                        <p>por Jorge Relato</p>
+                    </div>
+                </div>
+    
+                <div class="recipe" id="pizza">
+                    <div class="recipe_img">
+                        <img src="_img/pizza.png" alt="Imagem do Pizza 4 Estações">
+                    </div>
+                    <div class="recipe_content">
+                        <p>Pizza 4 Estações </p>
+                    </div>
+                    <div class="chef_recipe">
+                        <p>por Fabiana Melo</p>
+                    </div>
+                </div>
+    
+                <div class="recipe" id="spaghetti">
+                    <div class="recipe_img">
+                        <img src="_img/spaghetti.png" alt="Imagem do Espaguete ao Alho">
+                    </div>
+                    <div class="recipe_content">
+                        <p>Espaguete ao Alho</p>
+                    </div>
+                    <div class="chef_recipe">
+                        <p>por Júlia Kinoto</p>
+                    </div>
+                </div>
+    
+                <div class="recipe" id="lasagna">
+                    <div class="recipe_img">
+                        <img src="_img/lasagna.png" alt="Imagem do Lasanha Mac n' Cheese">
+                    </div>
+                    <div class="recipe_content">
+                        <p>Lasanha Mac n' Cheese</p>
+                    </div>
+                    <div class="chef_recipe">
+                        <p>por Juliano Vieira</p>
+                    </div>
+                </div>
+    
+                <div class="recipe" id="candy">
+                    <div class="recipe_img">
+                        <img src="_img/candy.png" alt="Imagem do Docinho Pão do Céu">
+                    </div>
+                    <div class="recipe_content">
+                        <p>Docinho Pão do Céu</p>
+                    </div>
+                    <div class="chef_recipe">
+                        <p>por Ricardo Golvea</p>
+                    </div>
+                </div>
+    
+                <div class="recipe" id="wings">
+                    <div class="recipe_img">
+                        <img src="_img/wings.png" alt="Imagem do Asinha de Frango ao Barbecue">
+                    </div>
+                    <div class="recipe_content">
+                        <p>Asinha de Frango ao Barbecue</p>
+                    </div>
+                    <div class="chef_recipe">
+                        <p>por Vania Steroski</p>
+                    </div>
+                </div>
+            </section>
         </div>
 
-        <h2>Mais acessadas</h2>
-
-        <section id="recipes">
-            <div class="recipe">
-                <div class="recipe_img">
-                    <img src="_img/burger.png" alt="Imagem do Triplo Bacon Burguer">
+        <div class="modal_overlay">
+            <div class="modal">
+                <img class="img_modal" src="" alt="">
+                <div class="modal_content">
+                    <p class="text_content"></p>
                 </div>
-                <div class="recipe_content">
-                    <p>Triplo Bancon Burguer</p>
+                <div class="modal_chef">
+                    <p class="chef"></p>
                 </div>
-                <div class="chef_recipe">
-                    <p>por Jorge Relato</p>
-                </div>
-            </div>
-
-            <div class="recipe">
-                <div class="recipe_img">
-                    <img src="_img/pizza.png" alt="Imagem do Pizza 4 Estações">
-                </div>
-                <div class="recipe_content">
-                    <p>Pizza 4 Estações </p>
-                </div>
-                <div class="chef_recipe">
-                    <p>por Fabiana Melo</p>
+                <div class="close_modal">
+                    <a>Fechar modal</a>
                 </div>
             </div>
-
-            <div class="recipe">
-                <div class="recipe_img">
-                    <img src="_img/spaghetti.png" alt="Imagem do Espaguete ao Alho">
-                </div>
-                <div class="recipe_content">
-                    <p>Espaguete ao Alho</p>
-                </div>
-                <div class="chef_recipe">
-                    <p>por Júlia Kinoto</p>
-                </div>
-            </div>
-
-            <div class="recipe">
-                <div class="recipe_img">
-                    <img src="_img/lasagna.png" alt="Imagem do Lasanha Mac n' Cheese">
-                </div>
-                <div class="recipe_content">
-                    <p>Lasanha Mac n' Cheese</p>
-                </div>
-                <div class="chef_recipe">
-                    <p>por Juliano Vieira</p>
-                </div>
-            </div>
-
-            <div class="recipe">
-                <div class="recipe_img">
-                    <img src="_img/candy.png" alt="Imagem do Docinho Pão do Céu">
-                </div>
-                <div class="recipe_content">
-                    <p>Docinho Pão do Céu</p>
-                </div>
-                <div class="chef_recipe">
-                    <p>por Ricardo Golvea</p>
-                </div>
-            </div>
-
-            <div class="recipe">
-                <div class="recipe_img">
-                    <img src="_img/wings.png" alt="Imagem do Asinha de Frango ao Barbecue">
-                </div>
-                <div class="recipe_content">
-                    <p>Asinha de Frango ao Barbecue</p>
-                </div>
-                <div class="chef_recipe">
-                    <p>por Vania Steroski</p>
-                </div>
-            </div>
-
-        </section>
+        </div>
 
         <footer class="footer">
             <p>Todos os direitos reservados, receitas Foodfy</p>
         </footer>
+
+        <script src="scripts.js"></script>
     </body>
 </html>
