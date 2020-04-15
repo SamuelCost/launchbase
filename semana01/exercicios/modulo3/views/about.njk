@@ -1,0 +1,38 @@
+{% extends "layout.njk" %}
+
+{% block img %}
+    <img src="_img/logo_rs.png" alt="Logo da Rocketseat">
+    <h1>Rocketseat</h1>
+{% endblock img %}
+
+{% block content %}
+<div id="about">
+    <br>
+    <h2>Sobre</h2>
+    <p>Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível 🚀</p>
+    <br>
+    <p>Em um mundo onde a informação fica obsoleta cada vez mais rápido, velocidade de aprendizado é a chave para o sucesso.</p>
+    <br>
+    <p>
+        Por isso a Rocketseat oferece através de uma plataforma inteligente e metodologia prática, 
+        além de comunidade, eventos, conteúdo e conexão com o mercado de trabalho, todas as ferramentas 
+        que você precisa para masterizar no menor tempo possível as tecnologias mais modernas de desenvolvimento web e mobile,
+        e dessa forma avançar para o próximo nível como programador.
+    </p>
+</div>
+
+<div id="list">
+    <div>
+        <h2>Domine a linguagem de programação</h2>
+        <p class="js"><img class="prog" src="_img/logo_js.jpg" alt="Logo Javascript"> JavaScript</p>
+        <p><img class="prog" src="_img/logo_jses6.jpg" alt="">Javascript ES6+</p>
+    </div>
+    <div>
+        <h2>Domine a stack</h2>
+        <p><img id="njs" src="_img/logo_nodejs.png" alt="NodeJS">NodeJS</p>
+        <p><img src="_img/logo_reactjs.png" alt="ReactJS">ReactJS</p>
+        <p><img id="rn" src="_img/logo_reactnative.jpg" alt="ReactNative">React Native</p>
+    </div>
+</div>
+
+{% endblock content %}
