@@ -1,4 +1,4 @@
-{% extends "layout.html"%}
+{% extends "layout.njk"%}
 
 {%block head%}
 
@@ -14,75 +14,22 @@
         </div>
 
         <section class="cards">
-            <div class="card" id="cprMYC8PCVY">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/cprMYC8PCVY/maxresdefault.jpg" alt="video-aula 1 Myke Britto">
-                </div>
-                <div class="card_content">
-                    <p>WorkshopDev - Episódio 01 | Mayk Brito</p>
-                    <p>Conteúdo especial para você que quer aprender programação do zero</p>
-                </div>
-                <div class="card_info">
-                    <p>1h 15min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
 
-            <div class="card" id="3XnK3UPP8fw">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/3XnK3UPP8fw/maxresdefault.jpg" alt="video-aula 2 Myke Britto">
+            {%for item in items %}
+                <div class="card" id="{{item.id}}">
+                    <div class="card_image-container">
+                        <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
+                    </div>
+                    <div class="card_content">
+                        <p>{{item.title}}</p>
+                        <p>Conteúdo especial para você que quer aprender programação do zero</p>
+                    </div>
+                    <div class="card_info">
+                        <p>{{item.duration}}</p>
+                        <p class="card_price">{{item.price}}</p>
+                    </div>
                 </div>
-                <div class="card_content">
-                    <p>WorkshopDev - Episódio 02 | Mayk Brito</p>
-                    <p>Conteúdo especial para você que quer aprender programação do zero</p>
-                </div>
-                <div class="card_info">
-                    <p>1h 54min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="sF2-77fUzQo">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/sF2-77fUzQo/maxresdefault.jpg" alt="video-aula 3 Myke Britto">
-                </div>
-                <div class="card_content">
-                    <p>WorkshopDev - Episódio 03 | Mayk Brito</p>
-                    <p>Conteúdo especial para você que quer aprender programação do zero</p>
-                </div>
-                <div class="card_info">
-                    <p>43min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="KnBGxNHOLZQ">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/KnBGxNHOLZQ/maxresdefault.jpg" alt="video-aula 4 Myke Britto">
-                </div>
-                <div class="card_content">
-                    <p>WorkshopDev - Episódio 04 | Mayk Brito</p>
-                    <p>Conteúdo especial para você que quer aprender programação do zero</p>
-                </div>
-                <div class="card_info">
-                    <p>1h 50</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="wkjyNfBjT74">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/wkjyNfBjT74/maxresdefault.jpg" alt="video-aula 5 Myke Britto">
-                </div>
-                <div class="card_content">
-                    <p>WorkshopDev - Episódio 05 | Mayk Brito</p>
-                    <p>Conteúdo especial para você que quer aprender programação do zero</p>
-                </div>
-                <div class="card_info">
-                    <p>1h 09min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
+            {% endfor %}
         </section>
 
         <div class="modal-overlay">
