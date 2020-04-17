@@ -1,37 +1,32 @@
 {% extends "layout.njk" %}
 
 {% block img %}
-    <img src="_img/logo_rs.png" alt="Logo da Rocketseat">
-    <h1>Rocketseat</h1>
+    <img src="{{dataAbout.img}}" alt="Logo da {{dataAbout.name}}">
+    <h1>{{dataAbout.name}}</h1>
 {% endblock img %}
 
 {% block content %}
 <div id="about">
     <br>
-    <h2>Sobre</h2>
-    <p>Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível 🚀</p>
+    <h2>{{dataAbout.title}}</h2>
+    <p>{{dataAbout.description1}}</p>
     <br>
-    <p>Em um mundo onde a informação fica obsoleta cada vez mais rápido, velocidade de aprendizado é a chave para o sucesso.</p>
+    <p>{{dataAbout.description2}}</p>
     <br>
-    <p>
-        Por isso a Rocketseat oferece através de uma plataforma inteligente e metodologia prática, 
-        além de comunidade, eventos, conteúdo e conexão com o mercado de trabalho, todas as ferramentas 
-        que você precisa para masterizar no menor tempo possível as tecnologias mais modernas de desenvolvimento web e mobile,
-        e dessa forma avançar para o próximo nível como programador.
-    </p>
+    <p>{{dataAbout.description3}}</p>
 </div>
 
 <div id="list">
     <div>
         <h2>Domine a linguagem de programação</h2>
-        <p class="js"><img class="prog" src="_img/logo_js.jpg" alt="Logo Javascript"> JavaScript</p>
-        <p><img class="prog" src="_img/logo_jses6.jpg" alt="">Javascript ES6+</p>
+        <p class="js"><img class="{{dataAbout.js.class}}" src="{{dataAbout.js.img}}" alt="Logo {{dataAbout.js.name}}">{{dataAbout.js.name}}</p>
+        <p><img class="{{dataAbout.jses6.class}}" src="{{dataAbout.jses6.img}}" alt="Logo {{dataAbout.jses6.name}}">{{dataAbout.jses6.name}}</p>
     </div>
     <div>
         <h2>Domine a stack</h2>
-        <p><img id="njs" src="_img/logo_nodejs.png" alt="NodeJS">NodeJS</p>
-        <p><img src="_img/logo_reactjs.png" alt="ReactJS">ReactJS</p>
-        <p><img id="rn" src="_img/logo_reactnative.jpg" alt="ReactNative">React Native</p>
+        {%for item in dataAbout.listStack%}
+        <p><img id="{{item.id}}" src="{{item.img}}" alt="Logo do {{item.name}}">{{item.name}}</p>
+        {%endfor%}
     </div>
 </div>
 

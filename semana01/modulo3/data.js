@@ -3,7 +3,8 @@ module.exports = [
         id: "cprMYC8PCVY",
         title: "WorkshopDev - Episódio 01 | Mayk Brito",
         duration: "1h 15min",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
 
     {
@@ -24,13 +25,15 @@ module.exports = [
         id: "KnBGxNHOLZQ",
         title: "WorkshopDev - Episódio 04 | Mayk Brito",
         duration: "1h 50min",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
 
     {
         id: "wkjyNfBjT74",
         title: "WorkshopDev - Episódio 05 | Mayk Brito",
         duration: "1h 09min",
-        price: "Free"
+        price: "Free",
+        featured: true
     }
 ]
