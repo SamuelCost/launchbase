@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="imgRecipe">
+        <img src="/_img/{{recipeData.id}}.png" alt="Imagem do {{recipeData.title}}">
+    </div>
+
+    <div class="title">
+        <h1>{{recipeData.title}}</h1>
+        <p>por {{recipeData.author}}</p>
+    </div>
+
+    <div class="ingredients">
+        <h3>Ingredientes <a class="showHideIng">ESCONDER</a></h3>
+
+        <div class="content_ingredients">
+            <ul>
+                {% for ingredients in recipeData.ingredients %}
+                    <li>{{ingredients}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="preparation">
+        <h3>Modo de Preparo <a class="showHidePrep">ESCONDER</a></h3>
+
+        <div class="content_preparation">
+            {% for preparation in recipeData.preparation %}
+                <p>{{preparation}}</p>
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    <div class="information">
+        <h3>Informação adicionais <a class="showHideInfo">ESCONDER</a></h3>
+
+        <div class="content_information">
+            <p>{{recipeData.information}}</p>
+        </div>
+        <br>
+    </div>
+
+{% endblock content %}
