@@ -21,7 +21,7 @@ O repositório esta divido por semana. Cada semana esta dividida em módulos e u
 
 Abaixo também há links para uma melhor navegação de todo o contéudo abordados.
 
-## :calendar: Semana 01
+# :calendar: Semana 01
    
 ### Desafio
 
@@ -30,8 +30,8 @@ Abaixo também há links para uma melhor navegação de todo o contéudo abordad
     - Refatorando Foodfy - [Detalhes](https://github.com/Rocketseat/bootcamp-launchbase-desafios-03/blob/master/desafios/03-refatorando-foodfy.md)
     
     
-### [Módulo 01](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo1)
-- Introdução a Programação Web
+### Módulo 01
+- Introdução a Programação Web - [Detalhes](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo1)
 #### Exercícios
 - 1° Módulo - Introdução ao JavaScript
     - Exercício 1-1 - [Detalhes](https://github.com/Rocketseat/bootcamp-launchbase-desafios-01/blob/master/desafios/01-1-primeiros-passos-com-js.md)
@@ -43,8 +43,8 @@ Abaixo também há links para uma melhor navegação de todo o contéudo abordad
      - Exercício 1-4 - [Detalhes](https://github.com/Rocketseat/bootcamp-launchbase-desafios-01/blob/master/desafios/01-4-aplicacao-operacoes-bancarias.md)
         - [Resolução](https://github.com/samukcosta/launchbase/tree/master/semana01/exercicios/modulo1/exercicio1-4)
      
-### [Módulo 02](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo2)
-- Iniciando com Front-End
+### Módulo 02
+- Iniciando com Front-End - [Detalhes](https://github.com/samukcosta/launchbase/tree/master/semana01/modulo2)
 #### Exercícios
 - *Os exercícios do módulo 2 foram realizados no mesmo arquivo/diretório, pois uma atividade complementa a outra.*
     - Exercício 2-1 - [Detalhes](https://github.com/Rocketseat/bootcamp-launchbase-desafios-02/blob/master/desafios/02-1-primeiro-html.md)
