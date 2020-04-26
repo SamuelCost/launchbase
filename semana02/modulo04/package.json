@@ -4,11 +4,13 @@
   "main": "server.js",
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
-    "nodemon": "nodemon server.js",
+    "nodemon": "nodemon -e js,html,njk server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views' "
   },
   "dependencies": {
     "express": "^4.17.1",
+    "init": "^0.1.2",
+    "intl": "^1.2.5",
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
