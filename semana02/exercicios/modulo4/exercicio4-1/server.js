@@ -11,7 +11,8 @@ server.use(routes)
 
 nunjunks.configure("views", {
     express:server,
-    autoescape: false
+    autoescape: false,
+    noCache: true
 })
 
 server.listen(5050, function(){

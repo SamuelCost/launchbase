@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="teacherInfo">
+    <section class="avatar" style="background: url(https://source.unsplash.com/collection/517198/400x800) no-repeat center center / cover"></section>
+
+    <section class="details">
+        <h3>Professor</h3>
+
+        <div class="info">
+            <div>Nome</div>
+            <div>{{teacher.name}}</div>
+        </div>
+
+        <div class="info">
+            <div>Idade</div>
+            <div>{{teacher.birth}}</div>
+        </div>
+
+        <div class="info">
+            <div>Grau de Escolaridade</div>
+            <div>{{teacher.level}}</div>
+        </div>
+
+        <div class="info">
+            <div>Tipo de Curso</div>
+            <span>{{teacher.classType}}</span>
+        </div>
+
+        <div class="info">
+            <div>Tipo de Aula</div>
+            {% for sub in teacher.subject %}
+                <span>{{sub}}</span>
+            {% endfor %}
+
+            
+        </div>
+
+        <div class="info">
+            <div>Desde</div>
+            <div>{{teacher.date_create}}</div>
+        </div>
+        
+    </section>
+</div>
+{% endblock content %}

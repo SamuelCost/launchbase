@@ -1,4 +1,46 @@
 {
     "teachers": [
+        {
+            "id": 1,
+            "avatar_url": "http://google.com",
+            "name": "Samuel Costa",
+            "birth": 839980800000,
+            "gender": "M",
+            "level": "medio",
+            "classType": "presencial",
+            "subject": "Informática"
+        },
+        {
+            "id": 2,
+            "avatar_url": "http://google.com",
+            "name": "Monic Laura Alves de Araújo",
+            "birth": 741398400000,
+            "gender": "F",
+            "level": "superior",
+            "classType": "adistancia",
+            "subject": "Redes, Segurança da Informação"
+        },
+        {
+            "id": 3,
+            "avatar_url": "http://google.com",
+            "name": "Leticia Alves de Araújo",
+            "birth": 1117584000000,
+            "gender": "F",
+            "level": "medio",
+            "classType": "presencial",
+            "subject": "Artes, Biologia, Desenho Contemporanio",
+            "date_create": 1587948843461
+        },
+        {
+            "id": 4,
+            "avatar_url": "http://google.com",
+            "name": "Monic Laura",
+            "birth": 741398400000,
+            "gender": "F",
+            "level": "medio",
+            "classType": "adistancia",
+            "subject": "Redes, Segurança da Informação",
+            "date_create": 1587958830094
+        }
     ]
 }
