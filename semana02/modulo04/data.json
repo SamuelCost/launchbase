@@ -1,15 +1,6 @@
 {
     "instructors": [
         {
-            "id": 1,
-            "avatar_url": "https://media-exp1.licdn.com/dms/image/C4D03AQF8wy_DdnKMcQ/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=kPvMdYi3Fx7w11OMKEAe9FlQz1HWwXUXjwZhjPTF0yw",
-            "name": "Samuel Costa",
-            "birth": 839980800000,
-            "services": "Natação",
-            "gender": "M",
-            "create_at": 1587833477868
-        },
-        {
             "id": 2,
             "avatar_url": "http://google.com",
             "name": "Monic Laura",
