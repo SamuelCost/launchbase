@@ -1,24 +1,14 @@
 {
     "teachers": [
         {
-            "id": 1,
+            "id": "2",
             "avatar_url": "http://google.com",
-            "name": "Samuel Costa",
-            "birth": 839980800000,
+            "name": "Monic",
+            "birth": "1993-06-30",
             "gender": "M",
-            "level": "medio",
+            "level": "mestrado",
             "classType": "presencial",
-            "subject": "Informática"
-        },
-        {
-            "id": 2,
-            "avatar_url": "http://google.com",
-            "name": "Monic Laura Alves de Araújo",
-            "birth": 741398400000,
-            "gender": "F",
-            "level": "superior",
-            "classType": "adistancia",
-            "subject": "Redes, Segurança da Informação"
+            "subject": "Redes, Segurança da Informação, Programação Básica"
         },
         {
             "id": 3,

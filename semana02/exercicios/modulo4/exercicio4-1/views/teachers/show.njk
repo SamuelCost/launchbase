@@ -41,6 +41,15 @@
             <div>Desde</div>
             <div>{{teacher.date_create}}</div>
         </div>
+
+        <div class="buttons">
+            <a href="/teachers/{{teacher.id}}/edit" class="button">Editar</a>
+        
+            <form id="form_delete" action="/teachers?_method=DELETE" method="post">
+                <input type="hidden" name="id" value={{teacher.id}}>
+                <button class="buttons" type=submit>Deletar</button>
+            </form>
+        </div>
         
     </section>
 </div>
