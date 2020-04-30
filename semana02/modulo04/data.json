@@ -1,8 +1,17 @@
 {
     "instructors": [
         {
+            "id": 1,
+            "avatar_url": "https://avatars0.githubusercontent.com/u/12562944?s=460&u=27b4d592488c0af727db907f0faee4b8717fae88&v=4",
+            "name": "Samuel Araujo",
+            "birth": 741398400000,
+            "services": "Judo",
+            "gender": "M",
+            "create_at": 1587833500733
+        },
+        {
             "id": 2,
-            "avatar_url": "http://google.com",
+            "avatar_url": "https://scontent.fnat1-1.fna.fbcdn.net/v/t31.0-8/19983622_1537551572986807_3530671561531717260_o.jpg?_nc_cat=105&_nc_sid=a9b1d2&_nc_ohc=_4SMUFPrtIsAX-IVUzN&_nc_ht=scontent.fnat1-1.fna&oh=5808ae127452d6bc88c962e61c644b3d&oe=5ECD6D6C",
             "name": "Monic Laura",
             "birth": 741398400000,
             "services": "Pilates",
@@ -11,8 +20,8 @@
         },
         {
             "id": 3,
-            "avatar_url": "http://google.com",
-            "name": "Samuel de Araújo Costa",
+            "avatar_url": "https://scontent.fnat1-1.fna.fbcdn.net/v/t1.0-9/39182385_2079380685470557_3634820282755055616_o.jpg?_nc_cat=101&_nc_sid=84a396&_nc_ohc=Fdtbiyh3gR0AX_5TBVP&_nc_ht=scontent.fnat1-1.fna&oh=90a6b74308eb1be7dcd38b46b3e3ba39&oe=5ECD595A",
+            "name": "Samuel e Monic",
             "birth": 1580515200000,
             "services": "Musculação, Jiu-jitsu",
             "gender": "M",
