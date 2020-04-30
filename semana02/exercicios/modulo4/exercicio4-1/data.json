@@ -2,19 +2,19 @@
     "teachers": [
         {
             "id": "2",
-            "avatar_url": "http://google.com",
+            "avatar_url": "https://scontent.fnat1-1.fna.fbcdn.net/v/t31.0-8/19983622_1537551572986807_3530671561531717260_o.jpg?_nc_cat=105&_nc_sid=a9b1d2&_nc_ohc=_4SMUFPrtIsAX9RWXin&_nc_ht=scontent.fnat1-1.fna&oh=332883e18e65842ef38773b427980900&oe=5ED161EC",
             "name": "Monic",
             "birth": "1993-06-30",
             "gender": "M",
-            "level": "mestrado",
+            "level": "medio",
             "classType": "presencial",
             "subject": "Redes, Segurança da Informação, Programação Básica"
         },
         {
-            "id": 3,
-            "avatar_url": "http://google.com",
+            "id": "3",
+            "avatar_url": "https://instagram.fnat1-1.fna.fbcdn.net/v/t51.2885-15/e35/26073039_184699928793129_6711392987097595904_n.jpg?_nc_ht=instagram.fnat1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=pufL6QltPdcAX8tcxYY&oh=e7e050b9b5339b188ef31ec21085fed6&oe=5ED2196F",
             "name": "Leticia Alves de Araújo",
-            "birth": 1117584000000,
+            "birth": "2005-06-01",
             "gender": "F",
             "level": "medio",
             "classType": "presencial",
@@ -22,15 +22,15 @@
             "date_create": 1587948843461
         },
         {
-            "id": 4,
-            "avatar_url": "http://google.com",
-            "name": "Monic Laura",
-            "birth": 741398400000,
-            "gender": "F",
+            "id": 3,
+            "avatar_url": "https://media-exp1.licdn.com/dms/image/C4D03AQF8wy_DdnKMcQ/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=kPvMdYi3Fx7w11OMKEAe9FlQz1HWwXUXjwZhjPTF0yw",
+            "name": "Samuel de Araújo Costa",
+            "birth": 839980800000,
+            "gender": "M",
             "level": "medio",
-            "classType": "adistancia",
-            "subject": "Redes, Segurança da Informação",
-            "date_create": 1587958830094
+            "classType": "presencial",
+            "subject": "informática Básica, Programação, Redes de Computadores",
+            "date_create": 1588223166256
         }
     ]
 }
