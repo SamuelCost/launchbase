@@ -2,8 +2,8 @@
     "instructors": [
         {
             "id": 1,
-            "avatar_url": "https://avatars0.githubusercontent.com/u/12562944?s=460&u=27b4d592488c0af727db907f0faee4b8717fae88&v=4",
-            "name": "Samuel Araujo",
+            "avatar_url": "http://google.com",
+            "name": "teste",
             "birth": 741398400000,
             "services": "Judo",
             "gender": "M",
@@ -26,6 +26,30 @@
             "services": "Musculação, Jiu-jitsu",
             "gender": "M",
             "create_at": 1587874571949
+        }
+    ],
+    "members": [
+        {
+            "avatar_url": "https://www.instagram.com/p/B6YlhdNgODOHzvKIMpqiJkmicR6HbDPj4mmYsI0/",
+            "name": "Monic Laura",
+            "email": "monicllaura@gmail.com",
+            "birth": 741398400000,
+            "gender": "F",
+            "blood": "AB1",
+            "weight": "70",
+            "height": "174",
+            "id": 1
+        },
+        {
+            "id": 2,
+            "avatar_url": "https://media-exp1.licdn.com/dms/image/C4D03AQF8wy_DdnKMcQ/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=kPvMdYi3Fx7w11OMKEAe9FlQz1HWwXUXjwZhjPTF0yw",
+            "name": "Samuel Costa",
+            "email": "samu.ks@outlook.com",
+            "birth": 839980800000,
+            "gender": "M",
+            "blood": "O+",
+            "weight": "90",
+            "height": "175"
         }
     ]
 }

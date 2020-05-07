@@ -1,0 +1,74 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<form class="teacherInfo" method="POST" action="/students">
+    <section class="avatar" style="background: url(https://source.unsplash.com/collection/517198/400x800) no-repeat center center / cover"></section>
+
+    <section class="details">
+        <h3>Cadastro de Estudante</h3>
+
+        <div class="info">
+            <div>Avatar URL</div>
+            <div>
+                <input type="url" name="avatar_url" placeholder="http://">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Nome Completo</div>
+            <div>
+                <input type="text" name="name" placeholder="Nome do estudante">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Email</div>
+            <div>
+                <input type="email" name="email" placeholder="example@example.com">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Ano Escolar</div>
+            <div>
+                <select name="yearSchool">
+                    <option value="5af">5° Ano - Ensino Fundamental</option>
+                    <option value="6af">6° Ano - Ensino Fundamental</option>
+                    <option value="7af">7° Ano - Ensino Fundamental</option>
+                    <option value="8af">8° Ano - Ensino Fundamental</option>
+                    <option value="9af">9° Ano - Ensino Fundamental</option>
+                    <option value="1am">1° Ano - Ensino Médio</option>
+                    <option value="2am">2° Ano - Ensino Médio</option>
+                    <option value="3am">3° Ano - Ensino Médio</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Carga Horária Semanal</div>
+            <div>
+                <input type="number" name="workload">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Data de Nascimento</div>
+            <div>
+                <input type="date" name="birth">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Sexo</div>
+            <div>
+                <span><input type="radio" name="gender" value="M" checked>Masculino</span>
+                <span><input type="radio" name="gender" value="F">Feminino</span>
+            </div>
+        </div>
+
+        <button type="submit">Salvar</button>
+        
+    </section>
+</form>
+{% endblock content %}

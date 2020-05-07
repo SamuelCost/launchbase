@@ -55,6 +55,64 @@ module.exports = {
         const month = `0${date.getUTCMonth() + 1}`.slice(-2)
         const day = `0${date.getUTCDate()}`.slice(-2)
 
-        return `${year}-${month}-${day}`
+        return {
+            day,
+            month,
+            year,
+            birthDay: `${day}/${month}`,
+            iso: `${year}-${month}-${day}`
+        }
+    },
+
+    grade: function(teach){
+        let teaching = ""
+
+        if (teach == "5af"){
+            teaching = "5° Ano - Ensino Fundamental"
+        }else{
+            if (teach == "6af"){
+                teaching = "6° Ano - Ensino Fundamental"
+            }else{
+                if (teach == "7af"){
+                    teaching = "7° Ano - Ensino Fundamental"
+                }else{
+                    if (teach == "8af"){
+                        teaching = "8° Ano - Ensino Fundamental"
+                    }else{
+                        if (teach == "9af"){
+                            teaching = "9° Ano - Ensino Fundamental"
+                        }else{
+                            if (teach == "1am"){
+                                teaching = "1° Ano - Ensino Médio"
+                            }else{
+                                if (teach == "2am"){
+                                    teaching = "2° Ano - Ensino Médio"
+                                }else{
+                                    if (teach == "3am"){
+                                        teaching = "5° Ano - Ensino Médio"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return teaching
+    },
+
+    gender: function(gen) {
+        let gender = ""
+        
+        if (gen == "M") {
+            gender = "Masculino"
+        } else {
+            if (gen == "F") {
+                gender = "Feminino"
+            }
+        }
+
+        return gender
     }
 }

@@ -11,7 +11,7 @@ server.use(express.static('public'))
 server.use(methodOverride('_method'))
 server.use(routes)
 server.set("view engine", "njk")
-
+    
 nunjunks.configure("views", {
     express:server,
     autoescape: false,

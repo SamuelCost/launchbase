@@ -143,7 +143,7 @@ header {
     font-size: 12px ;
 }
 
-input {
+input, select {
     width: 100%;
     outline: none;
     color: #555;
@@ -169,6 +169,7 @@ a.button {
     margin-top: 32px;
     width: 100%;
     font-size: 16px;
+    cursor: pointer;
 }
 
 a.button {
@@ -234,7 +235,8 @@ tbody tr td:first-child {
     align-items: center;
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a,
+.table-container > a {
     background-color: var(--primary-color);
     padding: 8px 16px;
     text-decoration: none;
@@ -244,7 +246,16 @@ tbody tr td:last-child a {
     border-radius: 6px;
 }
 
+.table-container > a {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
+}
+
+.preparation {
+    padding-bottom: 0;
 }

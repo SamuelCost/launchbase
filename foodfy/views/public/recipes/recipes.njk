@@ -1,0 +1,37 @@
+{% extends "public/layout.njk" %}
+
+{% block content %}
+<section id = "page_recipes" class="recipes">
+    {% for recipe in recipes %}
+        <div class="recipe" id="{{recipe.id}}">
+            <div class="recipe_img">
+                <img src="{{recipe.image}}" alt="Imagem do {{recipe.title}}">
+            </div>
+            <div class="recipe_content">
+                <p>{{recipe.title}}</p>
+            </div>
+            <div class="chef_recipe">
+                <p>por {{recipe.author}}</p>
+            </div>
+        </div>
+    {% endfor %}
+    
+</section>
+{% endblock content %}
+
+{% block modal %}
+<div class="modal_overlay">
+    <div class="modal">
+        <img class="img_modal" src="" alt="">
+        <div class="modal_content">
+            <p class="text_content"></p>
+        </div>
+        <div class="modal_chef">
+            <p class="chef"></p>
+        </div>
+        <div class="close_modal">
+            <a>Fechar modal</a>
+        </div>
+    </div>
+</div>
+{% endblock modal %}

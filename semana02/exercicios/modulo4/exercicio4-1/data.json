@@ -32,5 +32,17 @@
             "subject": "informática Básica, Programação, Redes de Computadores",
             "date_create": 1588223166256
         }
+    ],
+    "students": [
+        {
+            "id": "2",
+            "avatar_url": "https://www.instagram.com/p/B6YlhdNgODOHzvKIMpqiJkmicR6HbDPj4mmYsI0/",
+            "name": "Monic Laura",
+            "birth": "1993-06-30",
+            "gender": "F",
+            "email": "",
+            "yearSchool": "1am",
+            "workload": ""
+        }
     ]
 }
