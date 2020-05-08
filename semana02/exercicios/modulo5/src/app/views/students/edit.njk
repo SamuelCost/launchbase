@@ -1,0 +1,78 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="teacherInfo">
+    <section class="avatar" style="background: url({{student.avatar_url}}) no-repeat center center / cover"></section>
+
+    <section class="details">
+        <form method="POST" action="/students?_method=PUT">
+            <h3>Editar Estudante</h3>
+
+            <div class="info">
+                <div>Avatar URL</div>
+                <div>
+                    <input type="url" name="avatar_url" placeholder="http://", value="{{student.avatar_url}}">
+                </div>
+            </div>
+
+            <div class="info">
+                <div>Nome Completo</div>
+                <div>
+                    <input type="text" name="name" placeholder="Nome do estudante" value="{{student.name}}">
+                </div>
+            </div>
+
+            <div class="info">
+                <div>Email</div>
+                <div>
+                    <input type="email" name="email" placeholder="{{student.email}}">
+                </div>
+            </div>
+
+            <div class="info">
+                <div>Ano Escolar</div>
+                <div>
+                    <select name="yearSchool">
+                        <option value="5af" {%if student.yearSchool == "5af"%} selected{%endif%}>5° Ano - Ensino Fundamental</option>
+                        <option value="6af" {%if student.yearSchool == "6af"%} selected{%endif%}>6° Ano - Ensino Fundamental</option>
+                        <option value="7af" {%if student.yearSchool == "7af"%} selected{%endif%}>7° Ano - Ensino Fundamental</option>
+                        <option value="8af" {%if student.yearSchool == "8af"%} selected{%endif%}>8° Ano - Ensino Fundamental</option>
+                        <option value="9af" {%if student.yearSchool == "9af"%} selected{%endif%}>9° Ano - Ensino Fundamental</option>
+                        <option value="1am" {%if student.yearSchool == "1am"%} selected{%endif%}>1° Ano - Ensino Médio</option>
+                        <option value="2am" {%if student.yearSchool == "2am"%} selected{%endif%}>2° Ano - Ensino Médio</option>
+                        <option value="3am" {%if student.yearSchool == "3am"%} selected{%endif%}>3° Ano - Ensino Médio</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="info">
+                <div>Carga Horária Semanal</div>
+                <div>
+                    <input type="number" name="workload" placeholder="{{student.workload}}">
+                </div>
+            </div>
+
+            <div class="info">
+                <div>Data de Nascimento</div>
+                <div>
+                    <input type="date" name="birth" value="{{student.birth}}">
+                </div>
+            </div>
+
+            <div class="info">
+                <div>Sexo</div>
+                <div>
+                    <span><input type="radio" name="gender" value="M" {% if student.gender == "M" %} checked {% endif %}>Masculino</span>
+                    <span><input type="radio" name="gender" value="F" {% if student.gender == "F" %} checked {% endif %}>Feminino</span>
+                </div>
+            </div>
+            
+            <button class="buttons" type="submit">Salvar</button>
+
+            <input type="hidden" name="id" value={{student.id}}>
+
+        </form> 
+    </section>
+</div>
+{% endblock content %}

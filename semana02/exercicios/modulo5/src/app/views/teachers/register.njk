@@ -1,0 +1,71 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<form class="teacherInfo" method="POST" action="/teachers">
+    <section class="avatar" style="background: url(https://source.unsplash.com/collection/517198/400x800) no-repeat center center / cover"></section>
+
+    <section class="details">
+        <h3>Cadastro de Professor</h3>
+
+        <div class="info">
+            <div>Avatar URL</div>
+            <div>
+                <input type="url" name="avatar_url" placeholder="http://">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Nome Completo</div>
+            <div>
+                <input type="text" name="name" placeholder="Nome do professor">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Data de Nascimento</div>
+            <div>
+                <input type="date" name="birth">
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Sexo</div>
+            <div>
+                <span><input type="radio" name="gender" value="M" checked>Masculino</span>
+                <span><input type="radio" name="gender" value="F">Feminino</span>
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Grau de Escolaridade</div>
+            <div>
+                <select name="level">
+                    <option value="medio">Ensino Médio Completo</option>
+                    <option value="superior">Ensino Superior Completo</option>
+                    <option value="mestrado">Mestrado</option>
+                    <option value="doutorado">Doutorado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Tipo de Aula</div>
+            <div>
+                <span><input type="radio" name="classType" value="presencial" checked>Presencial</span>
+                <span><input type="radio" name="classType" value="adistancia">À Distância</span>
+            </div>
+        </div>
+
+        <div class="info">
+            <div>Área de Atuação</div>
+            <div>
+            <input type="text" name="subject" placeholder="Separe as disciplinas por virgula">
+            </div>
+        </div>
+
+        <button type="submit">Salvar</button>
+        
+    </section>
+</form>
+{% endblock content %}

@@ -1,4 +1,3 @@
-const Intl = require('intl')
 const instructors = require("../models/instructor")
 const {age, date} = require("../../lib/utils")
 

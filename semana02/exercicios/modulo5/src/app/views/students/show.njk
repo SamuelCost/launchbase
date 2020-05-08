@@ -1,0 +1,52 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="teacherInfo">
+    <section class="avatar" style="background: url({{student.avatar_url}}) no-repeat center center / cover"></section>
+
+    <section class="details">
+        <h3>Estudante</h3>
+
+        <div class="info">
+            <div>Nome</div>
+            <div>{{student.name}}</div>
+        </div>
+
+        <div class="info">
+            <div>Email</div>
+            <div>{{student.email}}</div>
+        </div>
+
+        <div class="info">
+            <div>Idade</div>
+            <div>{{student.birth}} anos</div>
+        </div>
+
+        <div class="info">
+            <div>Sexo</div>
+            <div>{{student.gender}}</div>
+        </div>
+
+        <div class="info">
+            <div>Ano Escolar</div>
+            <div>{{student.yearSchool}}</div>
+        </div>
+
+        <div class="info">
+            <div>Carga Horária Semanal</div>
+            <div>{{student.workload}}h</div>
+        </div>
+
+        <div class="buttons">
+            <a href="/students/{{student.id}}/edit" class="button">Editar</a>
+        
+            <form id="form_delete" action="/students?_method=DELETE" method="post">
+                <input type="hidden" name="id" value={{student.id}}>
+                <button class="buttons" type=submit>Deletar</button>
+            </form>
+        </div>
+        
+    </section>
+</div>
+{% endblock content %}
