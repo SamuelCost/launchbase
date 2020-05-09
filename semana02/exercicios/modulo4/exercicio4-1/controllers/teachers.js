@@ -20,6 +20,8 @@ exports.post = function(req,res){
 
     let {avatar_url, name, birth, gender, level, classType, subject} = req.body
 
+    console.log(level)
+
     birth = Date.parse(birth)
     const id = Number(data.teachers.length + 1)
     const date_create = Date.now()

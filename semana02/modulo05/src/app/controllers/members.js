@@ -1,13 +1,20 @@
-const Intl = require('intl')
+const members = require("../models/member")
 const {age, date} = require("../../lib/utils")
-const db = require("../../config/db")
+
 
 module.exports = {
     index(req,res){
-        return res.render("members/index")
+        members.all(function(members){
+            return res.render("members/index", {members})
+        })
     },
     create(req,res){
-        return res.render("members/create")
+
+        members.instructorsSelectOptions(function(options){
+            return res.render("members/create", {instructorOptions: options})
+
+        })
+
     },
     post(req,res){
 
@@ -19,40 +26,39 @@ module.exports = {
             }
         }
     
-        const query = `
-            INSERT INTO members (
-                name,
-                avatar_url,
-                gender,
-                services,
-                birth,
-                create_at
-            ) VALUES ($1, $2, $3, $4, $5, $6)
-
-            RETURNING id
-        `
-        
-        const values = [
-            req.body.name,
-            req.body.avatar_url,
-            req.body.gender,
-            req.body.services,
-            date(req.body.birth).iso,
-            date(Date.now()).iso
-        ]
-
-        db.query(query, values, function(err, results){
-            console.log(err)
-            console.log(results)
-            return
+        members.create(req.body, function(member) {
+            return res.redirect(`/members/${member.id}`)
         })
 
         return
     },
     show(req,res){
-        return
+        members.find(req.params.id, function(member){
+            if (!member) return res.send("member not found")
+
+            member.birth = date(member.birth).birthDay
+
+            return res.render("members/show", {member})
+        })
     },
     edit(req,res){
+        
+
+        members.find(req.params.id, function(member){
+            if (!member) return res.send("member not found")
+
+            member.birth = date(member.birth).iso
+
+            members.instructorsSelectOptions(function(options){
+                return res.render("members/edit", {member,instructorOptions: options})
+    
+            })
+
+        })
+
+        return
+    },
+    put(req,res){
         const keys = Object.keys(req.body)
     
         for (key of keys) {
@@ -61,13 +67,13 @@ module.exports = {
             }
         }
 
-        return
-    },
-    put(req,res){
-    
-        return
+        members.update(req.body, function(){
+            return res.redirect(`members/${req.body.id}`)
+        })
     },
     delete(req,res){
-        return
+        members.delete(req.body.id, function(){
+            return res.redirect(`members`)
+        })
     }
 }
