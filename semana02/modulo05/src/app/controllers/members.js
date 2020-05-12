@@ -24,7 +24,7 @@ module.exports = {
             if (req.body[key] == ""){
                 return res.send("Please, fill all fields")
             }
-        }
+        }   
     
         members.create(req.body, function(member) {
             return res.redirect(`/members/${member.id}`)

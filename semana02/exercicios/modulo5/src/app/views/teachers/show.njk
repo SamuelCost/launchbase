@@ -15,29 +15,29 @@
 
         <div class="info">
             <div>Idade</div>
-            <div>{{teacher.birth}}</div>
+            <div>{{teacher.age}}</div>
         </div>
 
         <div class="info">
             <div>Grau de Escolaridade</div>
-            <div>{{teacher.level}}</div>
+            <div>{{teacher.education_level}}</div>
         </div>
 
         <div class="info">
             <div>Tipo de Curso</div>
-            <span>{{teacher.classType}}</span>
+            <span>{{teacher.class_type}}</span>
         </div>
 
         <div class="info">
             <div>Tipo de Aula</div>
-            {% for sub in teacher.subject %}
+            {% for sub in teacher.subjects_taught %}
                 <span>{{sub}}</span>
             {% endfor %}
         </div>
 
         <div class="info">
             <div>Desde</div>
-            <div>{{teacher.date_create}}</div>
+            <div>{{teacher.created_at}}</div>
         </div>
 
         <div class="buttons">

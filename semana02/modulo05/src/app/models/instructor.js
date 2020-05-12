@@ -3,7 +3,7 @@ const {age, date} = require("../../lib/utils")
 
 
 module.exports = {
-    all(callback) {
+    all(callback) { 
 
         db.query(`
         SELECT instructors.*, count(members) AS total_students

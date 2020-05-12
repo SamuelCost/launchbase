@@ -22,7 +22,7 @@
                         {{teacher.name}}
                     </td>
                     <td>
-                        {% for sub in teacher.subject.split(",") %}
+                        {% for sub in teacher.subjects_taught.split(",") %}
                             <span class="subject">{{sub}}</span>
                         {% endfor %}
                     </td>

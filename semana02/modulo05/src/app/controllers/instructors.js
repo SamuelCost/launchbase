@@ -39,8 +39,6 @@ module.exports = {
         })
     },
     edit(req,res){
-        
-
         instructors.find(req.params.id, function(instructor){
             if (!instructor) return res.send("Instructor not found")
 
@@ -48,8 +46,6 @@ module.exports = {
 
             return res.render("instructors/edit", {instructor})
         })
-
-        return
     },
     put(req,res){
         const keys = Object.keys(req.body)
