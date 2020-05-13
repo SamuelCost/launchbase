@@ -258,3 +258,37 @@ td:last-child {
     text-align: center;
 }
 
+.table_container #filter_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table_container #filter_header a.newCreated{
+    margin: 0;
+    width: 120px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.table_container #filter_header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 16px;
+}
+
+.table_container #filter_header form button {
+    color: #eee;
+    background-color: var(--secundary-color);
+    margin: 0;
+    
+}
+
+.table_container #filter_header form input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+

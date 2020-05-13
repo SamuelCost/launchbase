@@ -54,7 +54,7 @@ module.exports = {
     },
     findBy(filter,callback){
         db.query(`
-        SELECT instructors.*, count(members) AS total_students
+        SELECT instructors.*, count(members) AS total_members   
         FROM instructors
         LEFT JOIN members ON (members.instructor_id = instructors.id)
         WHERE instructors.name ILIKE '%${filter}%'

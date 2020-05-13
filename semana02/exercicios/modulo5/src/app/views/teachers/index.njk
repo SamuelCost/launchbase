@@ -3,7 +3,18 @@
 {% block content %}
 
 <div class="teacherInfo table_container">
-    <a class="newCreated" href="/teachers/register">Novo</a>
+    <div id="filter_header">
+        <a class="newCreated" href="/teachers/register">Novo</a>
+        <form action="/teachers/" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Nome ou Área de Atuação"
+                value={{filter}}
+            >
+            <button type="submit">Filtrar</button>
+        </form>
+    </div>
 
     <table width=100%>
         <thead>
