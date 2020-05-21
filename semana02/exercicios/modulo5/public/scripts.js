@@ -1,5 +1,7 @@
 const currentPage = location.pathname
 const menuItems = document.querySelectorAll("#wrapper a")
+const windows = window.location.search
+console.log(currentPage)
 
 for (item of menuItems){
     if (currentPage.includes(item.getAttribute("href"))){
@@ -49,9 +51,9 @@ function createPaginate(pagination){
             elements += `<span>${page}</span>`
         } else {
             if (filter) {
-                elements += `<a href='/teachers?page=${page}&filter=${filter}'>${page}</a>`
+                elements += `<a id='?page=${page}' href='${currentPage}?page=${page}&filter=${filter}'>${page}</a>`
             } else {
-                elements += `<a href='/teachers?page=${page}'>${page}</a>`
+                elements += `<a id='?page=${page}' href='${currentPage}?page=${page}'>${page}</a>`
             }
         }
 
@@ -63,3 +65,11 @@ if (pagination) {
     createPaginate(pagination)
 }
 
+const pageSelected = document.getElementById(windows)
+const firtsPageSelected = document.getElementById("?page=1")
+console.log(pageSelected)
+if (pageSelected) {
+    pageSelected.classList.add("active")
+}else{
+    firtsPageSelected.classList.add("active")
+}

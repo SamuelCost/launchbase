@@ -4,9 +4,28 @@ const students = require("../models/student")
 
 module.exports = {
     index(req, res){
-        students.all(function(students){
-            return res.render("students/index", {students})
-        })
+        let {page, limit, filter} = req.query
+
+        page = page || 1
+        limit = limit || 3
+        let offset = ((page - 1) * limit)
+
+        const params = {
+            page,
+            limit,
+            filter,
+            offset,
+            callback(students){
+                const pagination = {
+                    total: Math.ceil(students[0].total / limit),
+                    page
+                }
+
+                return res.render("students/index", {students, pagination, filter})
+            }
+        }
+
+        students.paginate(params)
         
     },
     create(req,res){

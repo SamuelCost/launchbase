@@ -34,7 +34,8 @@ body {
     margin-left: 32px;
 }
 
-#wrapper a.active {
+#wrapper a.active,
+.pagination a.active {
     font-weight: bold;
     color: var(--secundary-color);
 }
@@ -180,9 +181,11 @@ button {
 }
 
 .table_container {
+    min-height: 100%;
     display: block;
     padding: 32px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .table_container table {
@@ -292,3 +295,30 @@ td:last-child {
     box-sizing: border-box;
 }
 
+.table_container .pagination {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination  a,
+.pagination span {
+    color: var(--secundary-color);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.pagination a.active {
+    text-decoration: underline;
+}

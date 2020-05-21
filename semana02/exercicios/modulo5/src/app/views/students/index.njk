@@ -3,7 +3,18 @@
 {% block content %}
 
 <div class="teacherInfo table_container">
-    <a href="/students/register" class="newCreated">Novo</a>
+    <div id="filter_header">
+        <a class="newCreated" href="/students/register">Novo</a>
+        <form action="/students/" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Nome"
+                value={{filter}}
+            >
+            <button type="submit">Filtrar</button>
+        </form>
+    </div>
 
     <table width=100%>
         <thead>
@@ -25,5 +36,11 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <div class="pagination"
+        data-page = {{pagination.page}}
+        data-total = {{pagination.total}}
+        data-filter = {{filter}}
+    ></div>
 </div>
 {% endblock content %}

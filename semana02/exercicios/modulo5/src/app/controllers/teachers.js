@@ -7,7 +7,7 @@ module.exports = {
         let {page, limit, filter} = req.query
 
         page = page || 1
-        limit = limit || 2
+        limit = limit || 3
         let offset = ((page - 1) * limit)
 
         const params = {
