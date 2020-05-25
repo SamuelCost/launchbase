@@ -5,6 +5,14 @@ const information_content = document.querySelector(".content_information")
 const showIng = document.querySelector(".showHideIng")
 const showPrep = document.querySelector(".showHidePrep")
 const showInfo = document.querySelector(".showHideInfo")
+const currentPage = location.pathname
+const menuAdmin = document.querySelectorAll(".logoAdmin a")
+
+for (menu of menuAdmin){
+    if (currentPage.includes(menu.getAttribute("href"))){
+        menu.classList.add("active")
+    }
+}
 
 for (let recipe of recipes){
     recipe.addEventListener("click", function(){
@@ -22,7 +30,6 @@ showIng.addEventListener("click", function(){
         ingredient_content.classList.add("active")
     }
 })
-
 showPrep.addEventListener("click", function(){
     if (showPrep.textContent === "MOSTRAR"){
         showPrep.innerHTML = "ESCONDER"
@@ -32,7 +39,6 @@ showPrep.addEventListener("click", function(){
         preparation_content.classList.add("active")
     }
 })
-
 showInfo.addEventListener("click", function(){
     if (showInfo.textContent === "MOSTRAR"){
         showInfo.innerHTML = "ESCONDER"

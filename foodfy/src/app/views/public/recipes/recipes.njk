@@ -1,7 +1,14 @@
 {% extends "public/layout.njk" %}
 
+{% block filter %}
+<form class="filter" action="/foodfy" method="get" >
+    <input type="text" placeholder="Buscar uma receita" >
+    <button class="filterButton">Buscar</button>
+</form>
+{% endblock filter %}
+
 {% block content %}
-<section id = "page_recipes" class="recipes">
+<section id = "page_recipes" class="recipes pageRecipes">
     {% for recipe in recipes %}
         <div class="recipe" id="{{recipe.id}}">
             <div class="recipe_img">

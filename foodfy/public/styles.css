@@ -16,6 +16,7 @@
 html, body {
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 body {
@@ -31,20 +32,55 @@ body {
 }
 
 #publicHeader {
+    position: relative;
     margin-top: 36.1px;
     margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
 }
 
-#publicHeader a img {
+#publicHeader .links {
+    display: grid;
+    grid-template-columns: 37% 13% 15% 15%;
+}
+
+#publicHeader .links a img {
     margin-right: 9%;
 }
 
-#publicHeader a {
+#publicHeader .links a {
     font-size: 16px;
     color: var(--color-black);
     line-height: 19px;
     text-decoration: none;
     margin-right: 2.1%;
+}
+
+#publicHeader .filter {
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 91px;
+    gap: 8px;
+}
+
+#publicHeader .filter input {
+    height: 37px;
+    width: 246px;
+}
+
+.filter .filterButton {
+    height: 37px;
+    width: 91px;
+    border-radius: 4px;
+    background-color: #6558C3;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
 }
 
 .mainAdmin{
@@ -61,8 +97,22 @@ body {
     margin-bottom: 50px;
 }
 
+.logoAdmin a {
+    font-weight: bold;
+    color: #999999;
+    font-size: 15px;
+    list-style: 19px;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.logoAdmin a.active {
+    color: #FFFFFF;
+}
+
 .logoAdmin a img {
     margin-left: 20%;
+    margin-right: 50px;
 }
 
 #billboard {
@@ -107,6 +157,10 @@ h2 {
     color: var(--color-black);
     height: 28px;
     width: 174px;
+}
+
+.pageRecipes {
+    margin-top: 72px;
 }
 
 .recipes {
@@ -195,6 +249,7 @@ h2 {
 }
 
 .footer {
+    position: relative;
     bottom: 0;
     height: 3%;
     width: 100%;
@@ -555,3 +610,72 @@ h3 a {
     padding: 150px 0 330px;
 }
 
+.mainAdmin .header {
+    display: grid;
+    grid-template-columns: 1fr 141px;
+    margin-bottom: 30px;
+}
+
+.mainAdmin .header button:hover {
+    background-color: #4635c5;
+}
+
+.mainAdmin .header h3,
+.mainAdmin h3 {
+    font-weight: bold;
+    color: #111111;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.mainAdmin .createChef p {
+    font-weight: bold;
+    color: #111111;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px;
+} 
+
+.mainAdmin .createChef input {
+    margin-bottom: 30px;
+}
+
+.mainAdmin .chefs .card_chefs img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.mainAdmin .chefs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.mainAdmin .chefs .card_chefs{
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    
+}
+
+.mainAdmin .chefs .card_chefs div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mainAdmin .chefs .card_chefs p {
+    color: #111111;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 10px;
+}
+
+.mainAdmin .chefs .card_chefs a {
+    font-weight: bold;
+    color: #6558C3;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+}
