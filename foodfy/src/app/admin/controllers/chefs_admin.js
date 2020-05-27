@@ -1,8 +1,8 @@
-const Chefs = require("../models/Admin/Chefs")
+const ChefsAdmin = require("../models/ChefsAdmin")
 
 module.exports = {
     index(req, res){
-        Chefs.all(function(chefs){
+        ChefsAdmin.all(function(chefs){
             return res.render("admin/chefs/index", {chefs})
         })
     },
@@ -19,8 +19,15 @@ module.exports = {
             }
         }
 
-        Chefs.create(req.body, function(){
+        ChefsAdmin.create(req.body, function(){
             return res.render("admin/chefs/index")
+        })
+    },
+    detail(req,res){
+        const {id} = req.params
+
+        ChefsAdmin.find(id, function(chef){
+            return res.render("admin/chefs/details", {chef})
         })
     }
 }

@@ -1,9 +1,9 @@
 const express = require('express')
 const server = express
 const routes = express.Router()
-const recipes = require("./app/controllers/recipesAdmin")
-const recipesPublic = require("./app/controllers/recipesPublic")
-const chefs = require("./app/controllers/chefs")
+const recipesAdmin = require("./app/admin/controllers/recipes_admin")
+const recipesPublic = require("./app/public/controllers/recipes_public")
+const chefsAdmin = require("./app/admin/controllers/chefs_admin")
 
 ///ROTAS PUBLICAS
 
@@ -17,24 +17,24 @@ routes.get("/foodfy/recipes/:id", recipesPublic.detail)
 routes.get("/foodfy/search", function(req,res){
     return res.render("public/recipes/searchRecipes")
 })
-routes.get("/foodfy/chefs", chefs.index)
 
 ///ROUTES ADMIN
 
 routes.get('/admin', function(req,res){
     return res.redirect('admin/recipes')
 })
-routes.get("/admin/recipes", recipes.index)
-routes.get("/admin/recipes/create", recipes.create);
-routes.get("/admin/recipes/:id", recipes.detail)
-routes.get("/admin/recipes/:id/edit", recipes.edit)
-routes.post("/admin/recipes", recipes.post)
-routes.put("/admin/recipes", recipes.put)
-routes.delete("/admin/recipes", recipes.delete)
+routes.get("/admin/recipes", recipesAdmin.index)
+routes.get("/admin/recipes/create", recipesAdmin.create);
+routes.get("/admin/recipes/:id", recipesAdmin.detail)
+routes.get("/admin/recipes/:id/edit", recipesAdmin.edit)
+routes.post("/admin/recipes", recipesAdmin.post)
+routes.put("/admin/recipes", recipesAdmin.put)
+routes.delete("/admin/recipes", recipesAdmin.delete)
 
-routes.get("/admin/chefs", chefs.index)
-routes.get("/admin/chefs/create", chefs.create)
-routes.post("/admin/chefs", chefs.post)
+routes.get("/admin/chefs", chefsAdmin.index)
+routes.get("/admin/chefs/create", chefsAdmin.create)
+routes.get("/admin/chefs/:id", chefsAdmin.detail)
+routes.post("/admin/chefs", chefsAdmin.post)
 
 routes.use(function(req, res) {
     res.status(404).render("not-found")
