@@ -224,12 +224,17 @@ h2 {
     border-radius: 15px;
 }
 
+.recipeAdmin .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .recipe_content_admin {
     font-weight: normal;
     color: var(--color-black);
     font-size: 18px;
     line-height: 21px;
-    margin-top: 20px;
 }
 
 .chef_recipe_admin {
@@ -455,8 +460,21 @@ button[type="submit"]{
     margin-bottom: 12px;
 }
 
+textarea {
+    padding: 10px;
+    min-width: 100%;
+    line-height: 24px;
+    border-radius: 4px;
+    border: 1px solid #DDDDDD;
+    color: #555;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+}
+
 .info-add {
     height: 257px;
+
 }
 
 .titleCreated {
@@ -467,7 +485,8 @@ button[type="submit"]{
     margin-bottom: 10px;
 }
 
-input {
+input,
+select {
     width: 100%;
     height: 49px;
     padding-left: 16px;
@@ -528,7 +547,8 @@ h3 a {
     cursor: pointer;
 }
 
-.ingredients {
+.ingredients,
+.preparation {
     position: relative;
     padding-bottom: 40px;
 }
@@ -546,23 +566,20 @@ h3 a {
     line-height: 28px;
 }
 
-.ingredients ul {
+.ingredients ul,
+.preparation ul {
     margin-left: 19px;
 }
 
-.ingredients li {
-    font-size: 18px;
-    line-height: 28px;
+.ingredients li,
+.preparation li {
     color: var(--color-dark-gray);
     font-size: 18px;
     line-height: 28px;
+    padding: 4px;
 }
 
-.preparation {
-    margin-bottom: 16px;
-}
-
-.preparation input {
+.preparation_fields input {
     margin-bottom: 12px;
 }
 
@@ -601,7 +618,7 @@ h3 a {
 .information p {
     color: var(--color-dark-gray);
     font-size: 18px;
-    line-height: 28px;
+    line-height: 36px;
 }
 
 .not-found {

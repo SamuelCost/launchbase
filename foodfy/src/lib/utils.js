@@ -14,5 +14,14 @@ module.exports = {
             birthDay: `${day}/${month}`,
             format: `${day}/${month}/${year}`
         }
-    }
+    },
+    lineBreak(str) {
+        const normal = str.replace(/(?:\r\n|\r|\n)/g, '<br>\n')
+        const invert = str.replace(/<br>/g, '\n')
+        
+        return {
+            norm: normal,
+            inv: invert
+        }
+    } 
 }
