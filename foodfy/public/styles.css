@@ -205,12 +205,22 @@ h2 {
     position: relative;
 }
 
-.manageRecipes h3{
+.manageRecipes .headerManageRecipes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.manageRecipes .headerManageRecipes h3{
     font-weight: bold;
     color: var(--color-black);
     font-size: 24px;
     line-height: 28px;
     margin-bottom: 30px;
+}
+
+.manageRecipes .headerManageRecipes a {
+
 }
 
 .recipeAdmin {
@@ -386,7 +396,8 @@ h2 {
     margin-bottom: 26px;
 }
 
-.showEditAdmin a {
+.showEditAdmin a,
+.manageRecipes .headerManageRecipes a {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 16px;
@@ -493,7 +504,7 @@ select {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     background-color: #FFFFFF;
-    color: #555;
+    color: #111111;
     font-size: 14px;
 }
 

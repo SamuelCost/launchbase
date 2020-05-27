@@ -16,12 +16,14 @@ module.exports = {
         }
     },
     lineBreak(str) {
-        const normal = str.replace(/(?:\r\n|\r|\n)/g, '<br>\n')
-        const invert = str.replace(/<br>/g, '\n')
+        const forbd = str.replace(/(?:\r\n|\r|\n)/g, '~n')
+        const forupdate = str.replace(/~n/g, '\n')
+        const forhtml = str.replace(/~n/g, '<br>')
         
         return {
-            norm: normal,
-            inv: invert
+            fbd: forbd,
+            fu: forupdate,
+            fh: forhtml
         }
     } 
 }

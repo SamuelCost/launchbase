@@ -2,7 +2,10 @@
 
 {% block content %}
 <section class="manageRecipes">
-    <h3>Gerenciar Receitas</h3>
+    <div class="headerManageRecipes">
+        <h3>Gerenciar Receitas</h3>
+        <a href="/admin/recipes/create" class="buttoncreate">Nova Receita</a>
+    </div>
 
     <section id = "page_recipes" class="recipes showAdmin">
         {% for recipe in recipes %}

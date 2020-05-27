@@ -26,6 +26,7 @@ module.exports = {
         const {id} = req.params
 
         Recipes.find(id, function(recipe){
+            recipe.information = lineBreak(recipe.information).fh
             return res.render("admin/recipes/recipeDetail", {recipe})
         })  
     },
@@ -35,50 +36,24 @@ module.exports = {
         Recipes.find(id, function(recipe){
             Recipes.teacherSelectOptions(function(chefs){
 
-                recipe.information = lineBreak(recipe.information).inv
+                recipe.information = lineBreak(recipe.information).fu
 
                 return res.render(`admin/recipes/edit`, {recipe, chefs})
             })
         })         
     },
     put(req,res){
+
         const {id} = req.body
-        let index = 0
-    
-        const foundRecipe = data.recipes.find(function(recipes, foundIndex){
-            if (recipes.id == id){
-                index = foundIndex
-                return true
-            }
-        })
-    
-        if (!foundRecipe) return res.send("Recipe not found")
-    
-        const recipe = {
-            ...foundRecipe,
-            ...req.body,
-        }
-    
-        data.recipes[index] = recipe
-    
-        fs.writeFile("data.json", JSON.stringify(data,null,4), function(err){
-            if(err) return res.send("Write error!")
-    
+        
+        Recipes.update(req.body, function(){
             return res.redirect(`/admin/recipes/${id}`)
         })
     },
     delete(req,res){
         const {id} = req.body
-    
-        const filteredRecipe = data.recipes.filter(function(recipes){
-            return recipes.id != id
-        })
-    
-        data.recipes = filteredRecipe
-    
-        fs.writeFile("data.json", JSON.stringify(data, null, 4), function(err){
-            if (err) return res.send("write file ERRO!")
-            
+
+        Recipes.delete(id, function(){
             return res.redirect("/admin/recipes")
         })
     }
