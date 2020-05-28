@@ -34,7 +34,10 @@ routes.delete("/admin/recipes", recipesAdmin.delete)
 routes.get("/admin/chefs", chefsAdmin.index)
 routes.get("/admin/chefs/create", chefsAdmin.create)
 routes.get("/admin/chefs/:id", chefsAdmin.detail)
+routes.get("/admin/chefs/:id/edit", chefsAdmin.edit)
 routes.post("/admin/chefs", chefsAdmin.post)
+routes.put("/admin/chefs", chefsAdmin.put)
+routes.delete("/admin/chefs", chefsAdmin.delete)
 
 routes.use(function(req, res) {
     res.status(404).render("not-found")

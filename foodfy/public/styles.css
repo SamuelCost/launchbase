@@ -180,6 +180,8 @@ h2 {
     height: 140px;
     width: 360px;
     border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .recipe_content {
@@ -198,7 +200,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-.recipes.showAdmin{
+.recipes.showRecipes{
     display: grid;
     grid-template-columns:  1fr 1fr;
     gap: 20px;
@@ -229,6 +231,8 @@ h2 {
     height: 80px;
     width: 172px;
     border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .recipeAdmin .content {
@@ -394,7 +398,8 @@ h2 {
 
 .showEditAdmin a,
 .manageRecipes .headerManageRecipes a,
-.headerChefs a {
+.headerChefs a,
+.headerDetailsChef a {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 16px;
@@ -413,6 +418,10 @@ h2 {
     color: var(--color-black);
     font-size: 24px;
     line-height: 28px;    
+}
+
+.editAdmin {
+    position: relative;
 }
 
 .editAdmin h3, .createdAdmin h3 {
@@ -435,6 +444,14 @@ h2 {
     background-color: #DC4747;
 }
 
+#deleteChef {
+    position: absolute;
+    top: 0;
+    background-color: #DC4747;
+    right: 135px;
+
+}
+
 .buttonAdmin {
     position: absolute;
     right: 0;
@@ -453,7 +470,6 @@ button[type="submit"]{
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;
-    
 }
 
 .buttonAdmin #buttonDelete{
@@ -525,6 +541,7 @@ select {
     min-width: 100%;
     height: 280px;
     border-radius: 15px;
+    
 }
 
 .title {
@@ -641,6 +658,10 @@ h3 a {
     margin-bottom: 30px;
 }
 
+.mainAdmin .header .delete {
+    background-color: #DC4747;
+}
+
 .mainAdmin .header button:hover {
     background-color: #4635c5;
 }
@@ -653,7 +674,7 @@ h3 a {
     line-height: 28px;
 }
 
-.mainAdmin .createChef p {
+.mainAdmin .createChef p{
     font-weight: bold;
     color: #111111;
     font-size: 16px;
@@ -663,12 +684,16 @@ h3 a {
 
 .mainAdmin .createChef input {
     margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 .mainAdmin .chefs .card_chefs img {
     width: 64px;
     height: 64px;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .mainAdmin .chefs{
@@ -703,4 +728,42 @@ h3 a {
     font-size: 14px;
     line-height: 16px;
     text-decoration: none;
+}
+
+.headerDetailsChef {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 42px;
+}
+
+.detailsChef {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.detailsChef img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.detailsChef h1 {
+    font-weight: bold;
+    color: #111111;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 4px;
+}
+
+.detailsChef p {
+    color: #777777;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.recipes_chef h3 {
+    margin-bottom: 30px;
 }
