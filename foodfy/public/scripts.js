@@ -7,13 +7,20 @@ const showPrep = document.querySelector(".showHidePrep")
 const showInfo = document.querySelector(".showHideInfo")
 const currentPage = location.pathname
 const menuAdmin = document.querySelectorAll(".logoAdmin a")
+const menuPublic = document.querySelectorAll(".links a")
 const add_preparation = document.querySelector(".add-preparation")
 const add_Ingredient = document.querySelector(".add-ingredient")
 
+console.log(menuPublic)
 
 
 for (menu of menuAdmin){
     if (currentPage.includes(menu.getAttribute("href"))){
+        menu.classList.add("active")
+    }
+}
+for (menu of menuPublic){
+    if (currentPage.includes(menu.getAttribute("href"))) {
         menu.classList.add("active")
     }
 }

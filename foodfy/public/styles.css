@@ -58,6 +58,16 @@ body {
     margin-right: 2.1%;
 }
 
+#publicHeader .links a:hover {
+    font-weight: bold;
+    color: rgb(252, 201, 193);
+}
+
+#publicHeader .links a.active {
+    color: rgb(252, 201, 193);
+    font-weight: bold;
+}
+
 #publicHeader .filter {
     box-sizing: border-box;
     position: absolute;
@@ -159,10 +169,6 @@ h2 {
     width: 174px;
 }
 
-.pageRecipes {
-    margin-top: 72px;
-}
-
 .recipes {
     position: relative;
     width: 100%;
@@ -170,6 +176,11 @@ h2 {
     grid-template-columns:  1fr 1fr 1fr;
     gap: 30px;
     margin-bottom: 50px;
+    margin-top: 72px;
+}
+
+.card_recipe_filter {
+    margin-top: 20px;
 }
 
 .recipe {
@@ -806,4 +817,10 @@ h3 a {
     color: #666666;
     font-size: 14px;
     line-height: 16px;
+}
+
+.filterRecipes {
+    font-size: 28px;
+    line-height: 32px;
+    margin-top: 52px;
 }

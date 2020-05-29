@@ -1,8 +1,8 @@
 {% extends "public/layout.njk" %}
 
 {% block filter %}
-<form class="filter" action="/foodfy" method="get" >
-    <input type="text" placeholder="Buscar uma receita" >
+<form class="filter" action="/foodfy/recipes" method="get" >
+    <input type="text" name="filter" placeholder="Buscar uma receita" >
     <button class="filterButton">Buscar</button>
 </form>
 {% endblock filter %}
