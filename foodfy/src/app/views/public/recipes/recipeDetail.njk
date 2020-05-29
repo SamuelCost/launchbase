@@ -7,7 +7,7 @@
 
     <div class="title">
         <h1>{{recipes.title}}</h1>
-        <p>por {{recipes.author}}</p>
+        <p>por {{recipes.name}}</p>
     </div>
 
     <div class="ingredients">
@@ -27,7 +27,7 @@
 
         <div class="content_preparation">
             {% for preparation in recipes.preparation %}
-                <p>{{preparation}}</p>
+                <li>{{preparation}}</li>
             {% endfor %}
         </div>
         

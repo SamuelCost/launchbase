@@ -1,19 +1,23 @@
 const express = require('express')
 const server = express
 const routes = express.Router()
-const recipesAdmin = require("./app/admin/controllers/recipes_admin")
+const foodfyPublic = require("./app/public/controllers/foodfy")
 const recipesPublic = require("./app/public/controllers/recipes_public")
+const chefsPublic = require("./app/public/controllers/chefs_public")
 const chefsAdmin = require("./app/admin/controllers/chefs_admin")
+const recipesAdmin = require("./app/admin/controllers/recipes_admin")
+
 
 ///ROTAS PUBLICAS
 
 routes.get('/', function(req,res){
     return res.redirect('foodfy')
 })
-routes.get("/foodfy", recipesPublic.index)
-routes.get("/foodfy/about", recipesPublic.about)
+routes.get("/foodfy", foodfyPublic.index)
+routes.get("/foodfy/about", foodfyPublic.about)
 routes.get("/foodfy/recipes", recipesPublic.show)
 routes.get("/foodfy/recipes/:id", recipesPublic.detail)
+routes.get("/foodfy/chefs", chefsPublic.index)
 routes.get("/foodfy/search", function(req,res){
     return res.render("public/recipes/searchRecipes")
 })

@@ -1,23 +1,18 @@
 const fs = require("fs")
+const {lineBreak} = require("../../../lib/utils")
+const RecipesPublic = require("../models/RecipesPublic")
 
-exports.index = function(req,res){
-    return res.render('public/index', {recipes: data.recipes})
-}
-exports.about = function(req,res){
-    return res.render('public/about')
-}
 exports.show = function(req,res){
-    return res.render("public/recipes/recipes", {recipes: data.recipes})
+    RecipesPublic.index(function(recipes){
+        return res.render("public/recipes/recipes", {recipes})
+    })
 }
 exports.detail = function(req,res){
-    const id = req.params.id
-    console.log(id)
+    const {id} = req.params
 
-    const recipe = data.recipes.find(function(recipes){
-        return recipes.id = id
+    RecipesPublic.find(id, function(recipes){
+        recipes.information = lineBreak(recipes.information).fh
+
+        return res.render("public/recipes/recipeDetail", {recipes}) 
     })
-
-    if (!recipe) return res.send("Recipe Not Found!")
-
-    return res.render("public/recipes/recipeDetail", {recipes: recipe})
 }
