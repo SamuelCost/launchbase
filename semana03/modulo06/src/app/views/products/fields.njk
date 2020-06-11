@@ -3,7 +3,7 @@
     <div>
         <select name="category_id">
             {% for category in categories %}
-                <option value="{{category.id}}" {% if product.category == category.id %}selected{% endif %}>{{category.name}}</option>
+                <option value="{{category.id}}" {% if product.category_id == category.id %}selected{% endif %}>{{category.name}}</option>
             {% endfor %}
             
         </select>
@@ -20,18 +20,32 @@
 <div class="item">
     <div>Descrição</div>
     <div>
-        <textarea name="description">
-            {{product.description}}
-        </textarea>
+        <textarea name="description">{{product.description}}</textarea>
     </div>
 </div>
 
-{# CAMPO DE FOTO #}
+<div class="item">
+    <div>Fotos</div>
+    <div>
+        <div id="photos-upload">
+            <input 
+                id="photos-input" 
+                type="file" 
+                name="photos" 
+                multiple
+                accept="image/*"
+                onchange="PhotosUpload.handleFileInput(event)"
+            >
+            <p>Selecione até 6 fotos</p>  
+        </div>
+        <div id="photos-preview"></div>
+    </div>
+</div>
 
 <div class="item">
     <div>Valor</div>
     <div>
-        <input type="text" name="price" placeholder="Preço do Produto" value="{{product.price}}">
+        <input type="text" name="price" placeholder="Preço do Produto" value="{{product.price}}" onkeydown="Mask.apply(this, 'formatBRL')">
     </div>
     {% if product.old_price %}
         <input type="hidden" name="old_price" value={{product.old_price}}>
@@ -45,23 +59,15 @@
     </div>
 </div>
 
-{% if product.status %}
+{% if (product.status == '1') or (product.status == '0') %}
 <div class="item">
     <div>Disponível</div>
     <div>
         <span><input type="radio" name="status" value="1" {% if product.status == "1" %} checked {% endif %}>Sim</span>
-        <span><input type="radio" name="gender" value="0" {% if product.status == "0" %} checked {%endif%}>Não</span>
+        <span><input type="radio" name="status" value="0" {% if product.status == "0" %} checked {%endif%}>Não</span>
     </div>
 </div>
 {% endif %}
-
-
-<div class="item">
-    <div>Email</div>
-    <div>
-        <input type="email" name="email" value="{{member.email}}">
-    </div>
-</div>
 
 
 
