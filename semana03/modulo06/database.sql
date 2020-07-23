@@ -27,3 +27,39 @@ CREATE TABLE "files" (
 ALTER TABLE "products" ADD FOREIGN KEY ("category_id") REFERENCES "categories" ("id");
 
 ALTER TABLE "files" ADD FOREIGN KEY ("products_id") REFERENCES "products" ("id");
+
+CREATE TABLE "users" (
+  "id" SERIAL PRIMARY KEY,
+  "name" text NOT NULL,
+  "email" text UNIQUE NOT NULL,
+  "password" TEXT NOT NULL,
+  "cpf_cnpj" TEXT UNIQUE NOT NULL,
+  "cep" TEXT,
+  "address" TEXT,
+  "created_at" timestamp DEFAULT 'now()',
+  "updated_at" timestamp DEFAULT 'now()'
+);
+
+ALTER TABLE "products" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
+
+CREATE FUNCTION trigger_set_timestamp()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.update_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_set_timestamp
+BEFORE UPDATE ON products
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_set_timestamp();
+
+CREATE TRIGGER trigger_set_timestamp
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_set_timestamp();
+
+INSERT INTO categories (name) VALUES ('comida');
+INSERT INTO categories (name) VALUES ('eletrônicos');
+INSERT INTO categories (name) VALUES ('automóveis');
