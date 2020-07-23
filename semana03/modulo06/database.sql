@@ -63,3 +63,11 @@ EXECUTE PROCEDURE trigger_set_timestamp();
 INSERT INTO categories (name) VALUES ('comida');
 INSERT INTO categories (name) VALUES ('eletrônicos');
 INSERT INTO categories (name) VALUES ('automóveis');
+
+CREATE TABLE "session" (
+  "sid" VARCHAR NOT NULL COLLATE "default",
+  "sess" JSON NOT NULL,
+  "expire" TIMESTAMP(6) NOT NULL
+)
+WITH (OIDS=FALSE);
+ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
