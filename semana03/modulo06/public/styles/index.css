@@ -115,7 +115,7 @@ header div.container a {
 
 nav.primary ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 nav.primary ul li a {
