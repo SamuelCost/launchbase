@@ -27,6 +27,38 @@ const Mask = {
             style: 'currency',
             currency: 'BRL'
         }).format(value/100)
+    },
+    cpfCnpj(value){
+        value = value.replace(/\D/g,"")
+
+        if (value.length > 14) {
+            value = value.slice(0, -1)
+        }
+
+        if (value.length > 11) {
+            value = value.replace(/(\d{2})(\d)/, "$1.$2")
+            value = value.replace(/(\d{3})(\d)/, "$1.$2")
+            value = value.replace(/(\d{3})(\d)/, "$1/$2")
+            value = value.replace(/(\d{4})(\d)/, "$1-$2")
+        } else {
+            value = value.replace(/(\d{3})(\d)/, "$1.$2")
+            value = value.replace(/(\d{3})(\d)/, "$1.$2")
+            value = value.replace(/(\d{3})(\d)/, "$1-$2")
+        }
+
+        return value
+    },
+    cep(value){
+        value = value.replace(/\D/g,"")
+
+        if (value.length > 8) {
+            value = value.slice(0, -1)
+        }
+
+        value = value.replace(/(\d{5})(\d)/, "$1-$2")
+
+        return value
+
     }
 }
 
@@ -50,7 +82,7 @@ const PhotosUpload = {
                 const image = new Image()
                 image.src = String(reader.result)
 
-                const div = PhotosUpload.getContainer(image)
+                const div =  PhotosUpload.getContainer(image)
 
                 PhotosUpload.preview.appendChild(div)
             }
@@ -61,8 +93,7 @@ const PhotosUpload = {
         PhotosUpload.input.files = PhotosUpload.getAllFiles()
     },
     hasLimit(event) {
-        const {uploadLimit, input, preview} = PhotosUpload
-        const {files: fileList} = input
+        const {uploadLimit, input: fileList, preview} = PhotosUpload
 
         if (fileList.length > uploadLimit) {
             alert(`Envie no máximo ${uploadLimit} fotos`)
@@ -110,7 +141,6 @@ const PhotosUpload = {
         button.classList.add('material-icons')
         button.innerHTML = "close"
         return button
-
     },
     removePhoto(event) {
         const photoDiv = event.target.parentNode // <div class="photo">
@@ -118,7 +148,7 @@ const PhotosUpload = {
         const index = photosArray.indexOf(photoDiv)
 
         PhotosUpload.files.splice(index, 1)
-        PhotosUpload.input.file = PhotosUpload.getAllFiles
+        PhotosUpload.input.files = PhotosUpload.getAllFiles()
         photoDiv.remove()
 
     },
@@ -129,7 +159,6 @@ const PhotosUpload = {
             const removedFiles = document.querySelector('input[name="removed_files"]')
             if (removedFiles) {
                 removedFiles.value += `${photoDiv.id},`
-                console.log(removedFiles.value)
             }
         }
 
@@ -167,5 +196,74 @@ const Lightbox = {
         Lightbox.target.style.top = "-100%"
         Lightbox.target.style.bottom = "initial"
         Lightbox.closeButton.style.top = "-80px"
+    }
+}
+
+const Validate = {
+    apply(input, func){
+        Validate.clearErrors(input)
+
+        let results = Validate[func](input.value) // = Mask.formatBRL(value)
+        input.value = results.value
+
+        if (results.error) {
+            Validate.displayError(input, results.error)
+        }
+    },
+    displayError(input, error) {
+        const div = document.createElement('div')
+        div.classList.add('error')
+        div.innerHTML = error
+        input.parentNode.appendChild(div)
+        input.focus()
+    },
+    clearErrors(input) {
+        const errorDiv = input.parentNode.querySelector(".error")
+        if (errorDiv) {
+            errorDiv.remove()
+        }
+    },
+    isEmail(value) {
+        let error = null
+
+        const mailFormat = /^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*(.\w{2,3})+$/
+
+        if (!value.match(mailFormat))
+            error = "Email Inválido"
+
+        return {
+            error,
+            value
+        }
+    },
+    isCpfCnpj(value){
+        let error = null
+
+        const cleanValues = value.replace(/\D/g, "")
+
+        if (cleanValues.length > 11 && cleanValues.length !== 14) {
+            error = "CNPJ incorreto"
+        } else if (cleanValues.length < 12 && cleanValues.length !== 11) {
+            error = "CPF incorreto"
+        }
+
+        return {
+            error,
+            value
+        }
+    },
+    isCep(value) {
+        let error = null
+
+        const cleanValues = value.replace(/\D/, "")
+
+        if (cleanValues.length !== 8) {
+            error = "CEP incorreto"
+        } 
+
+        return {
+            error,
+            value
+        }
     }
 }
