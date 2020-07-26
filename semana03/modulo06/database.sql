@@ -45,7 +45,7 @@ ALTER TABLE "products" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 CREATE FUNCTION trigger_set_timestamp()
 RETURNS TRIGGER AS $$
 BEGIN
-  NEW.update_at = NOW();
+  NEW.updated_at = NOW();
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
