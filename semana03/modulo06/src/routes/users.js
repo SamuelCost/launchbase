@@ -5,6 +5,7 @@ const SessionController = require("../app/controllers/sessionController")
 const UserController = require("../app/controllers/userController")
 const UserValidator = require("../app/validators/user")
 const SessionValidator = require("../app/validators/session")
+const {isLoggedRedirectToUsers, onlyUsers} = require("../app/middlewares/session")
 
 /*
 
@@ -15,7 +16,7 @@ routes.post('/password-reset', SessionController.reset)
 
 routes.delete('/', UserController.delete) */
 
-routes.get('/login', SessionController.loginForm)
+routes.get('/login', isLoggedRedirectToUsers, SessionController.loginForm)
 routes.post('/login', SessionValidator.login, SessionController.login)
 routes.post('/logout', SessionController.logout)
 
