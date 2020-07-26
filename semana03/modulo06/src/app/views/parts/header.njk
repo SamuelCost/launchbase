@@ -21,15 +21,12 @@
                     </a>
                 </li>
                 <li class="accounts">
-                    {% if user %}
-                        <a href="/accounts">
+                    {% if session.userID %}
+                        <a href="/users">
                             <i class="material-icons">account_circle</i>
                             Minha conta
                         </a>
                         <ul class="submenu">
-                            <li>
-                                <a href="/users">Configurações</a>
-                            </li>
                             <li>
                                 <a href="/buying">Meus pedidos</a>
                             </li>
