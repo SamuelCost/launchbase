@@ -6,7 +6,6 @@ const { hash } = require('bcryptjs')
 const faker = require('faker')
 const { fake } = require('faker')
 
-
 let usersIds
 let totalProducts = 10
 let totalUsers = 3
@@ -45,25 +44,24 @@ async function createProducts() {
             quantity: faker.random.number(99),
             status: Math.round(Math.random())
         })
-
-        const productsPromise = products.map(product => Product.create(product))
-
-        productsIds = await Promise.all(productsPromise)
-
-        let files = []
-
-        while (files.length < 10) {
-            files.push({
-                name: faker.image.image(),
-                path: `public/images/placeholder.png`,
-                products_id: productsIds[Math.floor(Math.random() * totalProducts)]
-            })
-        }
-
-        const filesPromise = files.map(file => Files.create(file))
-
-        await Promise.all(filesPromise)
     }
+    const productsPromise = products.map(product => Product.create(product))
+
+    productsIds = await Promise.all(productsPromise)
+
+    let files = []
+
+    while (files.length < 10) {
+        files.push({
+            name: faker.image.image(),
+            path: `public/images/placeholder.png`,
+            products_id: productsIds[Math.floor(Math.random() * totalProducts)]
+        })
+    }
+
+    const filesPromise = files.map(file => Files.create(file))
+
+    await Promise.all(filesPromise)
 }
 
 async function init() {
@@ -72,5 +70,3 @@ async function init() {
 }
 
 init()
-
-createUsers()
