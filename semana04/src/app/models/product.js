@@ -1,4 +1,5 @@
 const Base = require('./base')
+const db = require('../../config/db')
 
 Base.init({table: 'products'})
 

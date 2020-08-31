@@ -51,8 +51,6 @@ const Base = {
             VALUES (${values.join(',')})
             RETURNING id`
 
-            console.log(query)
-
             const results = await db.query(query)
             return results.rows[0].id
         } catch (err) {
