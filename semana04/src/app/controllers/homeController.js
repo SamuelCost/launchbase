@@ -1,9 +1,10 @@
 const Product = require("../models/product")
 const {formatPrice} = require("../../lib/utils")
+const db = require('../../config/db')
 
 module.exports = {
     async index(req, res){
-        const produtcts = await Product.findAll()
+        const products = await Product.findAll()
 
         if (!products) return res.send("Products not found!")
 
