@@ -6,6 +6,7 @@ Base.init({table: 'products'})
 module.exports = {
     ...Base,
     async files(id) {
+        
         const results = await db.query(`
             SELECT * FROM files WHERE products_id = $1
         `, [id])
