@@ -3,26 +3,19 @@ const LoadProductsService = require('../services/LoadProductService')
 module.exports = {
     async index(req, res){
         try{
-            let params = {}
-            
             const {filter, category} = req.query
 
-            if (!filter) return res.redirect("/")
-
-            params.filter = filter
-
-            if (category) {
-                params.category = category
+            if (!filter || filter.toLowerCase() == 'toda a loja') {
             }
-            
-            let products  = await Product.search(params)
+
+            let products  = await Product.search({filter, category})
 
             const productsPromise = products.map(LoadProductsService.format)
 
             products = await Promise.all(productsPromise)
 
             const search = {
-                term: req.query.filter,
+                term: filter || 'Toda a Loja',
                 total: products.length
             }
 
