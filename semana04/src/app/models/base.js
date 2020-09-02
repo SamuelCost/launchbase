@@ -12,7 +12,7 @@ function find(filters, table) {
             })
         })
     }
-    
+
     return db.query(query)
 }
 
@@ -24,7 +24,7 @@ const Base = {
 
         return this
     },
-    async find(filters) {
+    async find(id) {
         const results = await find({where: {id}}, this.table)
         return results.rows[0]
     },
@@ -44,7 +44,7 @@ const Base = {
 
             Object.keys(fields).map(key => {
                 keys.push(key)
-                values.push(`' ${fields[key]}'`)
+                values.push(`'${fields[key]}'`)
             })
 
             const query = `INSERT INTO ${this.table} (${keys.join(',')})
@@ -76,10 +76,10 @@ const Base = {
             return db.query(query)
     
         } catch (err) {
-            console.log(err)
+            console.error(err)
         }
     },
-    delete(){
+    delete(id){
         return db.query(`DELETE FROM ${this.table} WHERE id = $1`, [id])
     }
 }
