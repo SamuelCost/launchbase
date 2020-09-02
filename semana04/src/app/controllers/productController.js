@@ -1,8 +1,10 @@
 const Category = require("../models/category")
 const Product = require("../models/product")
 const File = require("../models/file")
+const LoadProductsService = require('../services/LoadProductService')
 
-const {formatPrice, date} = require("../../lib/utils")
+const {unlinkSync} = require('fs')
+
 
 module.exports = {
     async create(req, res) {
@@ -59,29 +61,9 @@ module.exports = {
     },
     async show(req,res){
         try {
-            let product = await Product.find(req.params.id)
+            const product = await LoadProductsService.load('product', {where: {id: req.params.id}})
 
-            if (!product) return res.send("Product not found")
-
-            const {day, hour, minutes, month} = date(product.updated_at)
-
-            product.published = {
-                day: `${day}/${month}`,
-                hour: `${hour}h${minutes}`, 
-                minutes, 
-                month
-            }
-
-            product.oldPrice = formatPrice(product.old_price)
-            product.price = formatPrice(product.price)
-
-            let files = await Product.files(product.id)
-            files = files.map(file => ({
-                ...file,
-                src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-            }))
-
-            return res.render("products/show", {product, files})
+            return res.render("products/show", {product})
         } catch (err) {
             console.error(err)
         }
@@ -89,22 +71,11 @@ module.exports = {
     async edit(req, res) {
     
         try {     
-            let product = await Product.find(req.params.id)
-
-            if(!product) return res.render("Product not find")
-
-            product.price = formatPrice(product.price)
-            product.old_price = formatPrice(product.old_price)
+            const product = await LoadProductsService.load('product', {where: {id: req.params.id}})
 
             const categories = await Category.findAll()
 
-            let files = await Product.files(product.id)
-            files = files.map(file => ({
-                ...file,
-                src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-            }))
-
-            return res.render("products/edit", {product, categories, files})
+            return res.render("products/edit", {product, categories})
             
         } catch (err) {
             console.error(err)
@@ -120,10 +91,11 @@ module.exports = {
                 }
             }
 
+            const {filename, path, product_id} = req.files
+
             if(req.files.length != 0){
                 const newFilesPromise = req.files.map(file => 
-                    File.create({...file, product_id: req.body.id}))
-                
+                    File.create({name:file.filename, path:file.path, products_id:req.body.id}))
                 await Promise.all(newFilesPromise)
             }
 
@@ -131,7 +103,7 @@ module.exports = {
                 const removedFiles = req.body.removed_files.split(",")
                 const lastIndex = removedFiles.length - 1
                 removedFiles.splice(lastIndex, 1)
-
+                
                 const removedFilesPromise = removedFiles.map(id => File.delete(id))
 
                 await Promise.all(removedFilesPromise)
@@ -141,7 +113,7 @@ module.exports = {
 
             if (req.body.old_price != req.body.price) {
                 const oldProduct = await Product.find(req.body.id)
-                req.body.old_price = oldProduct.rows[0].price
+                req.body.old_price = oldProduct.price
             }
 
             await Product.update(req.body.id, {
@@ -162,7 +134,21 @@ module.exports = {
     },
     async delete(req, res) {
         try {
+
+            const files = await Product.files(req.body.id)
+
             await Product.delete(req.body.id)
+
+            files.map(file => {
+                try {
+                   unlinkSync(file.path) 
+                } catch (error) {
+                    console.error(error)
+                }
+            })
+
+            let promiseResults = await Promise.all(allFilesPromise)
+
 
             return res.redirect('/products/create')
         } catch (err) {
