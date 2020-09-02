@@ -17,12 +17,12 @@ async function createUsers() {
     while (users.length < totalUsers) {
 
         users.push({
-            name: faker.name.firstName(),
-            email: faker.internet.email(),
+            name:faker.name.firstName(),
+            email:faker.internet.email(),
             password,
-            cpf_cnpj: faker.random.number(9999999999),
-            cep: faker.random.number(9999999),
-            address: faker.address.streetName(),
+            cpf_cnpj:faker.random.number(9999999999),
+            cep:faker.random.number(9999999),
+            address:faker.address.streetName(),
         })
     }
     const usersPromise = users.map(user => User.create(user))
@@ -35,14 +35,14 @@ async function createProducts() {
 
     while (products.length < totalProducts) {
         products.push({
-            category_id: Math.ceil(Math.random() * 3),
-            user_id: usersIds[Math.floor(Math.random() * totalUsers)],
-            name: faker.name.title(),
-            description: faker.lorem.paragraph(Math.ceil(Math.random() * 10)),
-            old_price: faker.random.number(9999),
-            price: faker.random.number(9999),
-            quantity: faker.random.number(99),
-            status: Math.round(Math.random())
+            category_id:Math.ceil(Math.random() * 3),
+            user_id:usersIds[Math.floor(Math.random() * totalUsers)],
+            name:faker.name.title(),
+            description:faker.lorem.paragraph(Math.ceil(Math.random() * 10)),
+            old_price:faker.random.number(9999),
+            price:faker.random.number(9999),
+            quantity:faker.random.number(99),
+            status:Math.round(Math.random())
         })
     }
     const productsPromise = products.map(product => Product.create(product))
@@ -53,9 +53,9 @@ async function createProducts() {
 
     while (files.length < 10) {
         files.push({
-            name: faker.image.image(),
-            path: `public/images/placeholder.png`,
-            products_id: productsIds[Math.floor(Math.random() * totalProducts)]
+            name:faker.image.image(),
+            path:`public/images/placeholder.png`,
+            products_id:productsIds[Math.floor(Math.random() * totalProducts)]
         })
     }
 
