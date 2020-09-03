@@ -1,4 +1,4 @@
-/*const input = document.querySelector("input[name=price]")
+const input = document.querySelector("input[name=price]")
 input.addEventListener('keydown', function(e){
     setTimeout(function(){
         let {value} = e.target
@@ -12,7 +12,7 @@ input.addEventListener('keydown', function(e){
     
         e.target.value = value
     }, 1)
-})*/
+})
 
 const Mask = {
     apply(input, func){
@@ -264,6 +264,22 @@ const Validate = {
         return {
             error,
             value
+        }
+    },
+    allFields(event) {
+        const items = document.querySelectorAll(' .item input, .item select, .item textarea')
+
+        for (item of items) {
+            if (item.value == "") {
+                const message = document.createElement('div')
+                message.classList.add('messages')
+                message.classList.add('error')
+                message.style.position = 'fixed'
+                message.innerHTML = "Todos os campos são obrigatórios."
+                document.querySelector('body').append(message)
+
+                event.preventDefault()
+            }
         }
     }
 }
